@@ -35,3 +35,9 @@ jobs:
 
       - name: check for style
         run: test -z $(go fmt ./...)
+      
+      - name: install linter
+        run: go install honnef.co/go/tools/cmd/staticcheck@latest
+      
+      - name: check linting 
+        run : staticcheck ./...
