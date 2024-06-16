@@ -16,5 +16,7 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: '1.22'
-      - name: buil the app
+      - name: change the ending style for Linux
+        run:  dos2unix ./scripts/buildprod.sh
+      - name: build the app
         run: ./scripts/buildprod.sh
